@@ -1,3 +1,7 @@
+/*
+@desc : it is a max finder fo rthree variable and more than three variables using generic class and methods
+ */
+
 public class GenericMaxFinder<T extends Comparable<T>> {
 
         private final T var1;
@@ -46,9 +50,19 @@ public class GenericMaxFinder<T extends Comparable<T>> {
          @param : no param
          @return The maximum variable among var1, var2, and var3.
          */
-        public T testMaximum() {
-            return findMax(var1, var2, var3);
+        public void  testMaximum() {
+            T max = findMax(var1, var2, var3);
+            printMax(max);
         }
+/*
+    @desc ;  Generic method to print the maximum value
+    @param - T - varaible
+    @return : no return
+
+ */
+    private static <T> void printMax(T max) {
+        System.out.println("Maximum value: " + max);
+    }
 
         /*
         @desc : it sorts the given array
@@ -90,15 +104,15 @@ public class GenericMaxFinder<T extends Comparable<T>> {
         public static void main(String[] args) {
             // Test case using Integer
             GenericMaxFinder<Integer> integerGenericMaxFinder = new GenericMaxFinder<>(5, 9, 3);
-            System.out.println("Maximum Integer: " + integerGenericMaxFinder.testMaximum());
+            integerGenericMaxFinder.testMaximum();
 
             // Test case using Double
             GenericMaxFinder<Double> doubleGenericMaxFinder = new GenericMaxFinder<>(4.5, 2.3, 8.1);
-            System.out.println("Maximum Double: " + doubleGenericMaxFinder.testMaximum());
+            doubleGenericMaxFinder.testMaximum();
 
             //test case using string
             GenericMaxFinder<String> stringGenericMaxFinder = new GenericMaxFinder<>("Apple" , "Mango" , "Water");
-            System.out.println("Maximum Double: " + stringGenericMaxFinder.testMaximum());
+            stringGenericMaxFinder.testMaximum();
 
             Integer[] intArray = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
             GenericMaxFinder<Integer> maxFinder = new GenericMaxFinder<>(5 , 4 , 8);
