@@ -21,12 +21,12 @@ public class MaxMin {
     }
 
     /*
-     * Finds the maximum among three integers using Integer objects and compareTo method.
-     *
-     * @param num1 The first integer
-     * @param num2 The second integer
-     * @param num3 The third integer
-     * @return The maximum of the three integers
+      @desc : Finds the maximum among three floats using Float objects and compareTo method.
+
+      @param num1 The first integer
+      @param num2 The second integer
+      @param num3 The third integer
+      @return The maximum of the three integers
      */
     public static float findMax(float num1, float num2, float num3) {
         Float float1 = num1;
@@ -37,6 +37,23 @@ public class MaxMin {
 
         return float1.compareTo(float2) > 0 ? (float1.compareTo(float3) > 0 ? num1 : num3)
                 : (float2.compareTo(float3) > 0 ? num2 : num3);
+    }
+
+
+    /*
+     @desc :  Finds the maximum among three strings.
+
+      @param str1 The first string
+      @param str2 The second string
+      @param str3 The third string
+      @return The maximum of the three strings
+     */
+    public static String findMax(String str1, String str2, String str3) {
+        System.out.println("4");
+        // Use compareTo to compare strings lexicographically
+
+        return str1.compareTo(str2) > 0 ? (str1.compareTo(str3) > 0 ? str1 : str3)
+                : (str2.compareTo(str3) > 0 ? str2 : str3);
     }
 
     public static void main(String[] args) {
@@ -63,6 +80,18 @@ public class MaxMin {
         // Test Case 3: Maximum at 3rd position
         float maxFloat3 = findMax(1.1F, 3.1F, 7.8F);
         System.out.println("Test Case 3: Maximum at 3rd position - Max is: " + maxFloat3);
+
+        // Test Case 1: Maximum at 1st position
+        String maxString1 = findMax("Apple", "Peach", "Banana");
+        System.out.println("Test Case 1: Maximum at 1st position - Max is: " + maxString1);
+
+        // Test Case 2: Maximum at 2nd position
+        String maxString2 = findMax("Orange", "Grapes", "Cherry");
+        System.out.println("Test Case 2: Maximum at 2nd position - Max is: " + maxString2);
+
+        // Test Case 3: Maximum at 3rd position
+        String maxString3 = findMax("Lemon", "Kiwi", "Watermelon");
+        System.out.println("Test Case 3: Maximum at 3rd position - Max is: " + maxString3);
     }
 
 
