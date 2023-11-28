@@ -1,3 +1,24 @@
+package com.bridgzelabz.maxfinder;
+/*
+@desc :
+The MaxMin class is designed to find the maximum and minimum values among three elements of different data types - integers, floats, and strings. It employs the compareTo method to compare objects and determine the maximum value. The class includes three methods, each tailored for a specific data type.
+
+findMax for Integers:
+        Parameters: Three integers (num1, num2, num3).
+        Returns: The maximum of the three integers.
+        Implementation: Converts integers to Integer objects and uses compareTo for comparison.
+
+findMax for Floats:
+        Parameters: Three floats (num1, num2, num3).
+        Returns: The maximum of the three floats.
+        Implementation: Converts floats to Float objects and utilizes compareTo for comparison.
+
+findMax for Strings:
+    Parameters: Three strings (str1, str2, str3).
+    Returns: The lexicographically maximum of the three strings.
+    Implementation: Uses compareTo to compare strings.
+The class includes a main method with test cases for each data type, demonstrating the functionality of the findMax methods.
+ */
 public class MaxMin {
 
 

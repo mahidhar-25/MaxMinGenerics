@@ -1,6 +1,24 @@
+package com.bridgzelabz.maxfinder;
+
 /*
 @desc : it is a max finder fo rthree variable and more than three variables using generic class and methods
- */
+
+
+The GenericMaxFinder class is a generic Java class designed to find the maximum among three variables of a generic type T.
+It employs a generic static method findMax to determine the maximum value among the provided variables,
+which must implement the Comparable interface for comparison.
+
+The class includes a parameterized constructor to initialize the three input variables (var1, var2, and var3)
+during object creation.
+
+Additionally, the class provides a method testMaximum that internally calls the static
+findMax method to find and print the maximum value among the three variables.
+
+The class also includes a generic method findMax for arrays of type T.
+It performs an insertion sort on the input array and returns the maximum value after sorting.
+
+The main method demonstrates the functionality of the class with test cases for Integer, Double, and String types.
+*/
 
 public class GenericMaxFinder<T extends Comparable<T>> {
 
@@ -22,6 +40,7 @@ public class GenericMaxFinder<T extends Comparable<T>> {
             this.var2 = var2;
             this.var3 = var3;
         }
+
 
 
 
@@ -119,4 +138,66 @@ public class GenericMaxFinder<T extends Comparable<T>> {
             Integer maxValue = maxFinder.findMax(intArray);
             System.out.println("Maximum value: " + maxValue);
         }
+
+    public static class MaxMin {
+
+
+        /*
+          @desc : Finds the maximum among three integers using Integer objects and compareTo method.
+
+         @param num1 The first integer
+         @param num2 The second integer
+         @param num3 The third integer
+         @return The maximum of the three integers
+         */
+        public static int findMax(int num1, int num2, int num3) {
+            Integer integer1 = num1;
+            Integer integer2 = num2;
+            Integer integer3 = num3;
+
+            // Use compareTo to compare Integer objects
+
+            return integer1.compareTo(integer2) > 0 ? (integer1.compareTo(integer3) > 0 ? num1 : num3)
+                    : (integer2.compareTo(integer3) > 0 ? num2 : num3);
+        }
+
+        /*
+          @desc : Finds the maximum among three floats using Float objects and compareTo method.
+
+          @param num1 The first integer
+          @param num2 The second integer
+          @param num3 The third integer
+          @return The maximum of the three integers
+         */
+        public static float findMax(float num1, float num2, float num3) {
+            Float float1 = num1;
+            Float float2 = num2;
+            Float float3 = num3;
+
+            // Use compareTo to compare Integer objects
+
+            return float1.compareTo(float2) > 0 ? (float1.compareTo(float3) > 0 ? num1 : num3)
+                    : (float2.compareTo(float3) > 0 ? num2 : num3);
+        }
+
+
+        /*
+         @desc :  Finds the maximum among three strings.
+
+          @param str1 The first string
+          @param str2 The second string
+          @param str3 The third string
+          @return The maximum of the three strings
+         */
+        public static String findMax(String str1, String str2, String str3) {
+            System.out.println("4");
+            // Use compareTo to compare strings lexicographically
+
+            return str1.compareTo(str2) > 0 ? (str1.compareTo(str3) > 0 ? str1 : str3)
+                    : (str2.compareTo(str3) > 0 ? str2 : str3);
+        }
+
+
+
     }
+}
